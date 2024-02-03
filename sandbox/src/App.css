@@ -1,0 +1,93 @@
+/* Existing styles for valentine-container, buttons, and other elements */
+.valentine-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #add8e6; /* Light pink background */
+  padding: 20px;
+  text-align: center;
+}
+
+.text {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333; /* Darker text for contrast */
+}
+
+.button {
+  cursor: pointer;
+  border: none;
+  padding: 12px 24px; /* Adjusted padding for a larger click area */
+  margin: 10px; /* Increased margin for clearer spacing between buttons */
+  border-radius: 8px; /* Slightly larger border-radius for a softer look */
+  font-size: 18px; /* Slightly larger font size for better readability */
+  transition:
+    background-color 0.3s,
+    transform 0.3s,
+    box-shadow 0.3s;
+  outline: none;
+  font-weight: bold;
+  letter-spacing: 1px;
+  display: inline-block; /* Ensures buttons are aligned side by side */
+}
+
+.yes-button {
+  background: linear-gradient(45deg, #ff8a00, #e52e71);
+  color: white;
+}
+
+.no-button {
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  color: white;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+img {
+  max-width: 100%; /* Ensure image is responsive and does not overflow its container */
+  border-radius: 10px; /* Optional: Adds rounded corners to your image */
+  margin-bottom: 20px;
+}
+
+.yes-active {
+  background-color: #ffb6c1; /* Or any pink shade you prefer */
+  /* Optional: if you have a repeating hearts background image */
+  background-image: url("path/to/hearts-pattern.png");
+  background-size: auto;
+}
+
+.valentine-button-spacing {
+  margin-right: 20px; /* Adjust as needed, or use margin-left on the 'No' button */
+}
+
+/* New styles for heart animation */
+@keyframes burst {
+  0% {
+    transform: scale(0);
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+.heart {
+  position: absolute;
+  animation: burst 0.75s ease-out forwards; /* Re-enable the animation */
+  opacity: 0; /* Initially hidden, will become visible during animation */
+  font-size: 2rem; /* Adjust the size of hearts as needed */
+}
